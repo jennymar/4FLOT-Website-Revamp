@@ -134,3 +134,4 @@ dist
 
 # desktop services store
 .DS_Store
+.vercel
