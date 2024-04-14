@@ -97,7 +97,6 @@ const VolunteerForm: React.FC<VolunteerFormProps> = ({
     const allowSubmit = validateForm();
 
     if (allowSubmit) {
-      submitForm(firstName, lastName, email, phoneNumber, receiveNews);
       getEventDetails(eventId)
         .then((response) => {
           if (response.success) {

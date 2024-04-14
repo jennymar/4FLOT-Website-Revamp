@@ -34,34 +34,6 @@ export default function VolunteerPopup({ open, setOpen, eventId }: VolunteerPopu
       phone: phoneNumber,
       signed_up_for_updates: reveiveNews,
     };
-
-    fetch("http://localhost:3001/api/volunteerDetails/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((res_json: VolunteerDetails) => {
-        console.log("Success:", res_json);
-        if ("_id" in res_json && res_json._id !== null) {
-          addVolunteerToEvent(eventId, res_json._id).catch((error) => {
-            alert(error);
-          });
-          setSuccess(true);
-        } else {
-          alert("Failed to add volunteer to event");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
   };
 
   if (!success) {
