@@ -17,6 +17,7 @@
   --color-primary-purple-hover: #7b61a3;
   --color-secondary-blue: #0370bb;
   --color-secondary-blue-hover: #3c98d7;
+  --font-open-sans: "OpenSans", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,6 +26,12 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-style: normal;
+  src: url("/opensans.woff2") format("woff2");
 }
 
 body {

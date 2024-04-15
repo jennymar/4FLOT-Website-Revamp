@@ -1,9 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-import { addVolunteerToEvent } from "../api/eventDetails";
-import { VolunteerDetails } from "../api/volunteerDetails";
-
 import VolunteerForm from "./VolunteerForm";
 
 type VolunteerPopupProps = {
@@ -16,26 +13,6 @@ export default function VolunteerPopup({ open, setOpen, eventId }: VolunteerPopu
   const [hover, setHover] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  // submitForm only runs when there is a successful submission
-  // ie. all fields are filled out and valid
-  // declared as arrow function to have access to setSuccess
-  const submitForm = (
-    firstName: string,
-    lastName: string,
-    email: string,
-    phoneNumber: string,
-    reveiveNews: boolean,
-  ) => {
-    // body for the POST request
-    const data = {
-      first_name: firstName,
-      last_name: lastName,
-      email,
-      phone: phoneNumber,
-      signed_up_for_updates: reveiveNews,
-    };
-  };
-
   if (!success) {
     // ----- FORM POPUP -----
     return (
@@ -45,7 +22,7 @@ export default function VolunteerPopup({ open, setOpen, eventId }: VolunteerPopu
           (open ? "" : "invisible hidden")
         }
       >
-        <VolunteerForm eventId={eventId} setSuccess={setSuccess} submitForm={submitForm}>
+        <VolunteerForm eventId={eventId} setSuccess={setSuccess}>
           <button
             className="absolute scale-100 top-6 right-6 hover:scale-110 transition-all duration-100 ease-linear"
             onClick={() => {
