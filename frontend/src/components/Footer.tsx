@@ -20,15 +20,19 @@ const Footer = () => {
   const links = {
     facebookLink: "https://www.facebook.com/4FLOT.team/",
     instagramLink: "https://www.instagram.com/4_futureleadersoftomorrow/",
+    youtubeLink: "https://youtube.com/@4flot?si=pPYwcHA8qQjheU_a",
+    twitterLink: "https://x.com/4flot?s=11&t=dZuyjiYpwbB9rVwU4VTibw",
+    tiktokLink: "/",
     aboutUs: "/about",
     getInvolved: "/involved",
     ourImpact: "/impact",
     ourMission: "/mission",
-    upcomingEvents: "/events",
+    upcomingEvents: "/upcoming-events",
+    pastEvents: "/past-events",
     testimonials: "/testimonials",
     ourTeam: "/team",
     contactUs: "/contact",
-    donate: "/donate",
+    donate: "/donations",
     newsletter: "/newsletter",
   };
 
@@ -149,8 +153,8 @@ const Footer = () => {
             <Link className={`${styles.link} ${styles.normalLink}`} href={links.ourTeam}>
               Our Team
             </Link>
-            <Link className={`${styles.link} ${styles.normalLink}`} href={links.donate}>
-              Donate
+            <Link className={`${styles.link} ${styles.normalLink}`} href={links.pastEvents}>
+              Past Events
             </Link>
             <Link className={`${styles.link} ${styles.normalLink}`} href={links.newsletter}>
               Newsletter
@@ -160,6 +164,9 @@ const Footer = () => {
           <div className={styles.linkRow}>
             <Link className={`${styles.link} ${styles.normalLink}`} href={links.contactUs}>
               Contact Us
+            </Link>
+            <Link className={`${styles.link} ${styles.normalLink}`} href={links.donate}>
+              Donate
             </Link>
           </div>
         </div>
@@ -189,6 +196,33 @@ const Footer = () => {
               className={styles.instagramLogo}
               src="/instagramIcon.svg"
               alt="Link to Instagram"
+            />
+          </a>
+          <a href={links.youtubeLink}>
+            <Image
+              width={54}
+              height={54}
+              className={styles.youtubeLogo}
+              src="/youtubeIcon.svg"
+              alt="Link to Youtube"
+            />
+          </a>
+          <a href={links.twitterLink}>
+            <Image
+              width={36}
+              height={36}
+              className={styles.twitterLogo}
+              src="/twitterIcon.svg"
+              alt="Link to Twitter"
+            />
+          </a>
+          <a href={links.tiktokLink}>
+            <Image
+              width={48}
+              height={48}
+              className={styles.tiktokLogo}
+              src="/tiktokIcon.svg"
+              alt="Link to Tiktok"
             />
           </a>
         </div>
